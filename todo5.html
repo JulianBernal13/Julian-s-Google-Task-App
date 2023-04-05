@@ -1,0 +1,65 @@
+<!-- // Re-rendering after data changes -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        My todo app
+    </title>
+</head>
+
+<body>
+    <!-- how to pick and modify the element in javascript? use id! -->
+    <input id = "todo-title" type = "text"> 
+    </input>
+    <input id = "date-picker" type = "date" />
+
+    <button onclick = "addTodo()">
+        Add todo
+    </button>
+    
+<div id= "todo-list">
+
+</div>
+
+    <script>
+
+        //array of strings
+        let todos = ['Get groceries', 'Wash car', 'Make Dinner'];
+        
+        render();
+
+        function render(){
+            
+            //reset our list and replaces with an empty string
+            document.getElementById('todo-list').innerHTML = '';
+
+            //prints to the div, instead of the body
+            todos.forEach(function (todoTitle) {
+                let element = document.createElement('div');
+                element.innerText = todoTitle;
+                let todoList = document.getElementById('todo-list');
+                todoList.appendChild(element);
+        })
+
+        }
+
+        //Allows for the adding of elements "STRINGS" when clicking the button
+        function addTodo(){
+            let textbox = document.getElementById('todo-title');
+            let title = textbox.value;
+
+            //This code will grab the datepicker from html and store it
+            let datepicker = document.getElementById('date-picker');
+            //get the date from the datepicker
+            let dueDate = datepicker.value;
+            todos.push(title);
+            render();
+        }
+
+
+    </script>
+</body>
+
+</html>

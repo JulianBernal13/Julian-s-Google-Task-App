@@ -1,0 +1,45 @@
+<!-- // Creating a todo using a text box -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        My todo app
+    </title>
+</head>
+
+<body>
+    <!-- how to pick and modify the element in javascript? use id! -->
+    <input id = "todo-title" type = "text"> 
+    </input>
+
+    <button onclick = "addTodo()">
+        Add todo
+    </button>
+    
+    <script>
+
+        let todos = ['Get groceries', 'Wash car', 'Make Dinner'];
+        //adds element to end of array 
+        
+
+        //eliminates last element in array todo.pop()
+
+        // places the array elements on the html page
+        todos.forEach(function (todoTitle) {
+            let element = document.createElement('div');
+            element.innerText = todoTitle;
+            document.body.appendChild(element);
+        })
+
+        //Allows for the adding of elements when clicking the button
+        function addTodo(){
+            let textbox = document.getElementById('todo-title');
+            let title = textbox.value;
+            todos.push(title);
+        }
+    </script>
+</body>
+
+</html>

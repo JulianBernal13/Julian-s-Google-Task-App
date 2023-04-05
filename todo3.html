@@ -1,0 +1,43 @@
+<!-- // The Document Object Model (DOM) -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>
+        My todo app
+    </title>
+</head>
+<body>
+    <button>
+    Press me
+    </button>
+    <script>
+
+        let todos = ['Get groceries', 'Wash car', 'Make Dinner'];
+        //adds element to end of array 
+        todos.push('another todo');
+        
+        //eliminates last element in array todo.pop()
+
+        todos.forEach(function (todoTitle){
+        let element = document.createElement('div');
+        element.innerText = todoTitle;
+        document.body.appendChild(element);
+        })
+
+        //method
+        // function addTodo(todoTitle){
+        
+        // let element = document.createElement('div');
+        // element.innerText = todoTitle;
+        // document.body.appendChild(element);
+
+        
+       // }
+        // addTodo(todo1);
+        // addTodo(todo2);
+        // addTodo(todo3);
+
+    </script>
+</body>
+</html>
